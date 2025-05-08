@@ -1,68 +1,146 @@
- t# CodeIgniter 4 Application Starter
+| Atribut         | Keterangan            |
+| --------------- | --------------------- |
+| **Nama**        | Bayu Aji Yuwono   |
+| **NIM**         | 312310492           |
+| **Kelas**       | TI.23.A.5             |
+| **Mata Kuliah** | Pemrograman Website 2 |
 
-## What is CodeIgniter?
+##  Tujuan Praktikum
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Dalam praktikum ini, tujuan utama yang ingin dicapai adalah sebagai berikut:
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+- Memahami Konsep Dasar Framework
+- Memahami Konsep MVC (Model-View-Controller)
+- Mampu Menggunakan CodeIgniter 4 untuk Pengembangan Aplikasi Web
+- Mampu Menggunakan CLI (Command Line Interface) dalam CodeIgniter 4
+- Mengaktifkan dan Menggunakan Mode Debugging dalam CodeIgniter 4
+- Mampu Membuat dan Mengelola Routing dalam CodeIgniter 4
+- Mengimplementasikan Layout dan Tampilan Web dengan CSS di CodeIgniter 4
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+##  Langkah-Langkah Praktikum
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+###  1. Instalasi dan Konfigurasi Web Server
 
-## Installation & updates
+- Gunakan XAMPP sebagai web server.
+  
+  ![{C334ACFA-057C-4309-906C-A76F351DF138}](https://github.com/user-attachments/assets/0ac43ff5-37b4-49fe-ab50-4e76180809bd)
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+- Aktifkan ekstensi PHP yang diperlukan dalam php.ini:
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+  ![{A5EB7495-B46D-482E-91CA-72B8D93291FE}](https://github.com/user-attachments/assets/2845bf90-bf97-42f0-a055-1f9a47f645e7)
 
-## Setup
+### 2. Instalasi CodeIgniter 4
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+- Unduh CodeIgniter 4 dari situs resmi: https://codeigniter.com/download
+- Ekstrak file ke direktori htdocs/lab11_ci.
+- Ubah nama direktori framework menjadi ci4.
+- Buka browser dan akses: http://localhost/lab11_ci/ci4/public/ untuk memastikan instalasi berhasil.
 
-## Important Change with index.php
+![WhatsApp Image 2025-03-06 at 05 10 23_85a7087f](https://github.com/user-attachments/assets/4120daf5-e7f3-4fc1-a8f3-44f0dcec9100)
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+### 3. Menjalankan CLI (Command Line Interface)
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+![{24EFBD5C-81A7-4BA3-BE72-7E341BB249B8}](https://github.com/user-attachments/assets/6487e4f7-5f51-4c78-87e4-12d1b6e60427)
 
-**Please** read the user guide for a better explanation of how CI4 works!
+Codeigniter 4 menyediakan CLI untuk mempermudah proses development. Untuk mengakses CLI buka Shell pada XAMPP dan Arahkan ke cd htdocs/lab11_ci/ci4
 
-## Repository Management
+## Php Sprak 
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+![{2AF08B0F-960E-4AE5-8E95-29C0D3E0529F}](https://github.com/user-attachments/assets/3e10a382-bfb4-44d3-94e1-19e270753f5a)
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+### 4. Menjalankan Mode Debugging 
 
-## Server Requirements
+- Jika fitur debugging belum aktif maka akan terjadi error pada aplikasi yang akan ditampilkan pesan kesalahan seperti berikut :
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+![WhatsApp Image 2025-03-06 at 05 39 58_98d16132](https://github.com/user-attachments/assets/0e37f67b-a239-4baf-b263-f5088f000dc4)
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+- Semua jenis error akan ditampilkan sama. Untuk memudahkan mengetahui jenis errornya, maka perlu diaktifkan mode debugging dengan mengubah nilai konfigurasi pada environment variable CI_ENVIRONMENT menjadi development. 
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+![{870114AE-C1D3-423B-96D7-3A56EF561482}](https://github.com/user-attachments/assets/69c98516-0efd-4e20-828e-f44f966fea50)
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+- setelah itu nanti akan muncul seperti ini :
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+![{7FDC7ABF-4E1A-4FCB-BE42-92CA06C25DE3}](https://github.com/user-attachments/assets/4a423bf9-f28a-4147-8791-7e4c535deaaf)
+
+- Contoh error yang terjadi. Untuk mencoba error tersebut, ubah kode pada file
+app/Controller/Home.php hilangkan titik koma pada akhir kode.
+
+![{CBC6AEE9-FA66-49C7-BD74-265C6258E6EB}](https://github.com/user-attachments/assets/5dbb2060-9857-4a29-bc57-88db7e40dfaa)
+
+### 5. Menambahkan Rounting Baru
+
+- Routing digunakan untuk mengatur alamat URL yang akan diproses oleh aplikasi. Tambahkan kode berikut di app/Config/Routes.php:
+
+- Contoh routing dasar:
+```php
+$routes->get('/', 'Home::index');
+```
+
+- Untuk menambahkan halaman baru, tambahkan kode berikut:
+```php
+$routes->get('/about', 'Page::about');
+$routes->get('/contact', 'Page::contact');
+$routes->get('/faqs', 'Page::faqs');
+```
+
+- Gunakan CLI (Command Line Interface) untuk melihat daftar routing yang aktif:
+```bash
+php spark routes
+```
+
+![{0908717E-559D-491F-AED1-DF685B9933FA}](https://github.com/user-attachments/assets/feb01f8b-fb8d-43c6-b111-6af3039dfd9c)
+
+![WhatsApp Image 2025-03-06 at 06 50 35_1d82b8d8](https://github.com/user-attachments/assets/c12c9485-e762-4739-9625-79ce44a8826c)
+
+### Membuat Controller Page
+Buat file Page.php di app/Controllers/ dengan isi sebagai berikut:
+
+```php
+<?php
+namespace App\Controllers;
+class Page extends BaseController {
+    public function about() { echo "Ini halaman About"; }
+    public function contact() { echo "Ini halaman Contact"; }
+    public function faqs() { echo "Ini halaman FAQ"; }
+}
+```
+
+![WhatsApp Image 2025-03-06 at 06 35 28_5b190015](https://github.com/user-attachments/assets/eeb1116b-7bf3-4373-9444-d56b0e4c98b5)
+
+### 7. Membuat View untuk Halaman About
+Untuk meningkatkan tampilan web, kita dapat menggunakan CSS dan sistem template.
+
+- Buat file about.php di app/Views/:
+  ```php
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title><?= $title; ?></title>
+</head>
+
+<body>
+    <h1><?= $title; ?></h1>
+    <hr>
+    <p><?= $content; ?></p>
+</body>
+
+</html>
+```
+
+### 8. Menambahkan Layout Web dengan CSS
+Untuk meningkatkan tampilan website, kita akan menggunakan template header dan footer:
+
+- Simpan file style.css di public/
+- Buat file header.php dan footer.php di app/Views/template/
+- Ubah about.php agar menggunakan include:
+
+```php
+<?= $this->include('template/header'); ?>
+<h1><?= $title; ?></h1>
+<p><?= $content; ?></p>
+<?= $this->include('template/footer'); ?>
+```
+
+![WhatsApp Image 2025-03-06 at 07 05 31_da67f9ab](https://github.com/user-attachments/assets/66848adf-bf03-4dd4-9d47-02f501b58642)
